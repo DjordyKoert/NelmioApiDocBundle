@@ -123,6 +123,7 @@ final class ApiDocGenerator
             $this->cacheItemPool->save($item->set($this->openApi));
         }
 
+
         return $this->openApi;
     }
 }
