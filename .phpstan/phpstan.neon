@@ -1,10 +1,10 @@
 includes:
     - phpstan-baseline.neon
-    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - ../vendor/phpstan/phpstan/conf/bleedingEdge.neon
 parameters:
     level: 1
     paths:
-        - .
+        - ../.
     excludePaths:
         - var
         - vendor
