@@ -57,7 +57,8 @@
         "jms/serializer": "^1.14|^3.0",
         "composer/package-versions-deprecated": "1.11.99.1",
 
-        "phpunit/phpunit": "^7.0|^8.0|^9.0|^10.4"
+        "phpunit/phpunit": "^7.0|^8.0|^9.0|^10.4",
+        "phpstan/phpstan": "^1.10"
     },
     "suggest": {
         "api-platform/core": "For using an API oriented framework.",
