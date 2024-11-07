@@ -25,10 +25,9 @@ jobs:
         run: yarn run swagger
       - name: Redocly
         run: yarn run redoc
-      - working-directory: /
-        run: |
+      - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
+          git add --all
           git commit -m "[dependabot-skip] Update UI files"
           git push
