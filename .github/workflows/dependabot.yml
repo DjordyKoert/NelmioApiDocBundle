@@ -9,6 +9,9 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./utils
 
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
@@ -18,15 +21,12 @@ jobs:
         with:
           node-version: '20.x'
       - run: yarn install
-        working-directory: ./utils
       - name: Swagger UI
         run: yarn run swagger
-        working-directory: ./utils
       - name: Redocly
         run: yarn run redoc
-        working-directory: ./utils
-      - uses: actions/checkout@v4
-      - run: |
+      - working-directory: /
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
