@@ -1,10 +1,6 @@
 name: Dependabot update UI files
-on: pull_request
 
-permissions:
-  pull-requests: write
-  issues: write
-  repository-projects: write
+on: pull_request
 
 jobs:
   dependabot:
@@ -12,6 +8,12 @@ jobs:
     defaults:
       run:
         working-directory: ./utils
+
+    permissions:
+      pull-requests: write
+      issues: write
+      repository-projects: write
+      contents: write
 
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
