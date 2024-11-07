@@ -9,27 +9,22 @@ permissions:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./utils
 
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v2
-        with:
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
-      -   name: "Checkout"
-          uses: actions/checkout@v4
+      - name: "Checkout"
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
       - run: yarn install
+        working-directory: ./utils
       - name: Swagger UI
         run: yarn run swagger
+        working-directory: ./utils
       - name: Redocly
         run: yarn run redoc
+        working-directory: ./utils
       - uses: actions/checkout@v4
       - run: |
           git config user.name github-actions
