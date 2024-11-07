@@ -10,9 +10,6 @@ jobs:
         working-directory: ./utils
 
     permissions:
-      pull-requests: write
-      issues: write
-      repository-projects: write
       contents: write
 
     if: github.event.pull_request.user.login == 'dependabot[bot]'
