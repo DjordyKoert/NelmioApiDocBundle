@@ -1,0 +1,39 @@
+name: Dependabot update UI files
+on: pull_request
+
+permissions:
+  pull-requests: write
+  issues: write
+  repository-projects: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./utils
+
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      -   name: "Checkout"
+          uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: yarn install
+      - name: Swagger UI
+        run: yarn run swagger
+      - name: Redocly
+        run: yarn run redocly
+      - uses: actions/checkout@v4
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "[dependabot-skip] Update UI files"
+          git push
