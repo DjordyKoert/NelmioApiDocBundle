@@ -28,9 +28,7 @@ jobs:
         run: yarn run swagger
       - name: Redocly
         run: yarn run redoc
-      - run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add --all
-          git commit -m "[dependabot-skip] Update UI files"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "[dependabot-skip] Update UI files"
+          branch: ${{ github.head_ref }}
