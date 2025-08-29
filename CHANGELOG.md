@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [5.5.1](https://github.com/DjordyKoert/NelmioApiDocBundle/compare/v5.5.0...v5.5.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* fix some weird bug ([#2](https://github.com/DjordyKoert/NelmioApiDocBundle/issues/2)) ([758315a](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/758315aa6fdb20927b5089fbeb968e09d035ffbc))
+
 ## 5.5.0
 * Schemas deduplication now compare generated schemas to reduce automatically named schemas (Entity / Entity2 / Entity3 / ...).
 * Added support for generic types describing
