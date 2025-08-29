@@ -27,3 +27,5 @@ jobs:
         with:
           title: 🚀 Release new version
           publish: npx @changesets/cli tag # this will create a new tag and a new release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
