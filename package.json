@@ -9,6 +9,9 @@
     "redoc": "2.5.0",
     "swagger-ui-dist": "5.27.1"
   },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6"
+  },
   "scripts": {
     "swagger": "yarn run swagger:bundle && yarn run swagger:bundle:map && yarn run swagger:standalone && yarn run swagger:standalone:map && yarn run swagger:css && yarn run swagger:css:map",
     "swagger:bundle": "cp node_modules/swagger-ui-dist/swagger-ui-bundle.js $npm_package_config_destination_swagger",
