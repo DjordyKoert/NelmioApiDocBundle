@@ -5,30 +5,19 @@ on:
       - "*.x"
 
 permissions:
-  contents: read # for checkout
+  contents: write
+  pull-requests: write
 
 jobs:
-  release:
-    name: Release
+  release-please:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - uses: googleapis/release-please-action@v4
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-      - run: yarn install
-      - name: Create Release Pull Request
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          title: 🚀 Release new version
-          publish: npx @changesets/cli tag # this will create a new tag and a new release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # this assumes that you have created a personal access token
+          # (PAT) and configured it as a GitHub action secret named
+          # `MY_RELEASE_PLEASE_TOKEN` (this secret name is not important).
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # this is a built-in strategy in release-please, see "Action Inputs"
+          # for more options
+          release-type: php
