@@ -1,4 +1,7 @@
 {
+  "name": "nelmio-api-doc-bundle",
+  "private": true,
+  "version": "5.5.0",
   "description": "Script utils for nelmio/api-doc-bundle UI",
   "license": "MIT",
   "dependencies": {
