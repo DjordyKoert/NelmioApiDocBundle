@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [5.6.0](https://github.com/DjordyKoert/NelmioApiDocBundle/compare/v5.5.1...v5.6.0) (2025-08-29)
+
+
+### Features
+
+* test config ([e9a506e](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/e9a506ec1beca0116fd42964749c43476681c521))
+
+
+### Miscellaneous Chores
+
+* I did some chores aswell ([da39bd4](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/da39bd493120781df809eb4a1605b27451516a9b))
+
 ## [5.5.1](https://github.com/DjordyKoert/NelmioApiDocBundle/compare/v5.5.0...v5.5.1) (2025-08-29)
 
 
