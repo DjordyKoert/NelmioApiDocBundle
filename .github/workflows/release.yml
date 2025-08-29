@@ -22,5 +22,8 @@ jobs:
           fetch-depth: 0
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
+        with:
+          dry_run: true
+          branch: 5.x
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
