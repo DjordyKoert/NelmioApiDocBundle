@@ -1,8 +1,17 @@
 {
-  "branches": ["5.x"],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
     "@semantic-release/git"
-  ]
+  ],
+  "branches": [
+    "5.x",
+    "6.x",
+    {
+      "name": "6.x",
+      "prerelease": "beta"
+    }
+  ],
+  "tagFormat": "v${version}"
 }
