@@ -7,8 +7,7 @@
     "@semantic-release/git"
   ],
   "branches": [
-    "5.x",
-    "main"
+    "5.x"
   ],
   "tagFormat": "v${version}"
 }
