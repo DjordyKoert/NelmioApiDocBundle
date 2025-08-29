@@ -6,12 +6,7 @@
     "@semantic-release/git"
   ],
   "branches": [
-    "5.x",
-    "6.x",
-    {
-      "name": "6.x",
-      "prerelease": "beta"
-    }
+    "5.x"
   ],
   "tagFormat": "v${version}"
 }
