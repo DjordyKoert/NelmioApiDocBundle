@@ -1,0 +1,41 @@
+name: Backport merged pull request
+
+on:
+  pull_request_target:
+    types:
+      - closed
+      - labeled
+
+permissions:
+  contents: write # so it can comment
+  pull-requests: write # so it can create pull requests
+
+jobs:
+  backport:
+    name: Backport pull request
+    runs-on: ubuntu-latest
+    if: >
+      (
+        github.event.action == 'closed' &&
+        github.event.pull_request.merged &&
+        (
+            startsWith(github.event.pull_request.title, 'fix:') ||
+            startsWith(github.event.pull_request.title, 'chore:')
+        )
+      ) ||
+      (
+        github.event.action == 'labeled'
+        && startsWith(github.event.label.name, 'backport')
+        && github.event.pull_request.merged
+      )
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create backport pull requests
+        uses: korthout/backport-action@v3
+        with:
+          branch_name: backport-#${pull_number}-to-${target_branch}
+          pull_description: |
+            ### This is an automated backport of pull request #${pull_number} to branch `${target_branch}`.
+
+            **Do not modify this pull request.**
+          pull_title: "${pull_title} [Backport ${target_branch}]"
