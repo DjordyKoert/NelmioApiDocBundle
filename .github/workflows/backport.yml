@@ -17,11 +17,7 @@ jobs:
     if: >
       (
         github.event.action == 'closed' &&
-        github.event.pull_request.merged &&
-        (
-            startsWith(github.event.pull_request.title, 'fix:') ||
-            startsWith(github.event.pull_request.title, 'chore:')
-        )
+        github.event.pull_request.merged
       ) ||
       (
         github.event.action == 'labeled'
