@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [4.0.1](https://github.com/DjordyKoert/NelmioApiDocBundle/compare/v4.0.0...v4.0.1) (2025-11-12)
+
+
+### Bug Fixes
+
+* **backport:** remove pr title check [Backport 4.x] ([#15](https://github.com/DjordyKoert/NelmioApiDocBundle/issues/15)) ([b6d0b4d](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/b6d0b4da3052ebe543a2d181d81dc53c1657d708))
+* cleanup backport description & title [Backport [#16](https://github.com/DjordyKoert/NelmioApiDocBundle/issues/16) to 4.x] ([#17](https://github.com/DjordyKoert/NelmioApiDocBundle/issues/17)) ([c277476](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/c27747642865557a5d23f663428f28be31ad17d1))
+* **release-please:** remove `release-as` ([#13](https://github.com/DjordyKoert/NelmioApiDocBundle/issues/13)) ([b6c1052](https://github.com/DjordyKoert/NelmioApiDocBundle/commit/b6c1052cc5cff228212215374e09fb6fa52b67cf))
+
 ## 4.0.0 (2025-11-12)
 
 
