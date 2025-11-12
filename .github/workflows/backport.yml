@@ -31,7 +31,10 @@ jobs:
         with:
           branch_name: backport-#${pull_number}-to-${target_branch}
           pull_description: |
-            ### This is an automated backport of pull request #${pull_number} to branch `${target_branch}`.
+            ### This is an automated backport of #${pull_number} to branch `${target_branch}`.
 
-            **Do not modify this pull request.**
-          pull_title: "${pull_title} [Backport ${target_branch}]"
+            > [!CAUTION]
+            > **Do not modify this pull request.**
+            
+            ${pull_description}
+          pull_title: "${pull_title} [Backport #${pull_number} to ${target_branch}]"
