@@ -28,6 +28,7 @@ final class DocumentationController
 
     public function __invoke(Request $request, string $area = 'default'): JsonResponse
     {
+        # This is a simulated fix, lets see if backporting works correctly.
         try {
             return JsonResponse::fromJsonString(
                 $this->renderOpenApi->renderFromRequest($request, RenderOpenApi::JSON, $area)

@@ -14,6 +14,8 @@ namespace Nelmio\ApiDocBundle\Annotation;
 trigger_deprecation('nelmio/api-doc-bundle', '4.32.3', 'The "%s" class is deprecated and will be removed in 5.0. Use the "\Nelmio\ApiDocBundle\Attribute\Areas" attribute instead.', Areas::class);
 
 /**
+ * This is a simulated fix, lets see if backporting works correctly.
+ *
  * @Annotation
  */
 #[\Attribute(\Attribute::TARGET_CLASS | \Attribute::TARGET_METHOD)]
